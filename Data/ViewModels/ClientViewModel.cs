@@ -23,7 +23,7 @@ public partial class ClientViewModel
     public int MaritalStatusId { get; set; }
 
     public IEnumerable<SelectListItem>? SelectStatus { get; set; }
-    public string StatusName { get; set; }
+    public string? StatusName { get; set; }
 
 
     public int MobileNumber { get; set; }

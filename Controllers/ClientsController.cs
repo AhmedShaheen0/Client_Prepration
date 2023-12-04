@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using TestPrepation.Data;
+using TestPrepation.Services;
+using TestPrepation.Data.Consts;
 using TestPrepation.Data.Models;
 using TestPrepation.Data.ViewModels;
-using TestPrepation.Core.Consts;
-using TestPrepation.Services;
 
 public class ClientsController : Controller
 {

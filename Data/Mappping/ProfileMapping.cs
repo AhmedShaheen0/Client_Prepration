@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using TestPrepation.Data.Models;
 using TestPrepation.Data.ViewModels;
 
-namespace TestPrepation.Mappping
+namespace TestPrepation.Data.Mappping
 {
-    public class ProfileMapping :Profile
+    public class ProfileMapping : Profile
     {
         public ProfileMapping()
         {
             CreateMap<Client, ClientViewModel>().ReverseMap();
-           
+
             CreateMap<Client, ClientViewModel>()
            .ForMember(dest => dest.StatusName, opt => opt.MapFrom(src => src.MaritalStatus.MaritalStatusName));
 

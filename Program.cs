@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using TestPrepation.Data;
-using TestPrepation.Mappping;
+using TestPrepation.Data.Mappping;
 using TestPrepation.Services;
 using UoN.ExpressiveAnnotations.NetCore.DependencyInjection;
 
