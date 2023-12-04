@@ -1,0 +1,55 @@
+﻿
+@model IEnumerable<ClientViewModel>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery antiforgery
+
+
+@section Styles
+    {
+    <link rel="stylesheet" href="~/assets/plugins/datatables/datatables.bundle.css" />
+}
+<!-- Your Razor Page content -->
+<div class="container mt-5">
+    <h3>Clients </h3>
+
+    <a href="javascript:;" class="btn btn-sm btn-primary js-render-modal"
+       data-title="Add Client" data-url="/Clients/Create">
+        Create
+    </a>
+    
+
+    <hr>
+
+    <h4>Registered Users</h4>
+    <partial name="_DataTablesCardHeader" />
+    <table  class="table table-row-dashed  table-hover table-row-gray-300 gy-7 js-datatables " data-document-title="Client">
+        <thead>
+            <tr>
+                <th>FirstName</th>  
+                <th>LastName</th>
+                <th>BirthDay</th>
+                <th>MaritalStatus</th>
+                <th>NumberPhone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var repo in Model)
+            {
+                  <partial name="_ClientRow" model="@repo" />
+            }
+        </tbody>
+    </table>
+</div>
+
+
+<input type="hidden" name="__RequestVerificationToken" value="@antiforgery.GetAndStoreTokens(Context).RequestToken" />
+
+@section Plugins
+    {
+    <script src="~/assets/plugins/datatables/datatables.bundle.js"></script>
+}
+
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+    }

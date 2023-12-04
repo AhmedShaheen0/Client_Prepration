@@ -1,0 +1,20 @@
+﻿@model ClientViewModel
+<tr >
+    <td>@Model.FirstName</td>
+    <td>@Model.LastName</td>
+    <td>@Model.DateOfBirth</td>
+    <td>@Model.StatusName</td>
+    <td>@Model.MobileNumber</td>
+    <td>@Model.Email</td>
+    <td>
+        <a href="javascript:;" class="btn btn-primary js-render-modal"
+           data-title="Edit Client" data-url="/Clients/Edit/@Model.ClientId"
+        data-update="true">
+            Edit
+        </a>
+    </td>
+    <td>
+        <a href="javascript:;" class="btn btn-primary  px3 js-Delete-Status"
+           data-url="/Clients/Delete/@Model.ClientId">Delete</a>
+    </td>
+</tr>
